@@ -1,9 +1,9 @@
 module.exports = {
   pathPrefix: '/gatsby-starter-level-2',
   siteMetadata: {
-    title: 'Level 2',
-    titleTemplate: '%s · Level 2',
-    image: '/images/logo.png',
+    title: 'ELijah Cobb',
+    titleTemplate: '%s · Elijah Cobb',
+    image: '/images/GreenRectangles/AboutGreen.png',
     author: 'Max Mustermann',
     description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
     url: 'https://knochenmark.github.io',
