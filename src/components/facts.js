@@ -45,7 +45,6 @@ const StyledFactNumber = styled.section`
 const Facts = () => {
   return (
     <StyledSkewedSection angle={10}>
-      <StyledH1>Some Interesting Facts</StyledH1>
       <StyledLogoSection>
         <StyledFactNumber>
           <span className="number">127</span>

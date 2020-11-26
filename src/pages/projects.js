@@ -35,7 +35,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { order: DESC, fields: frontmatter___date }
-      filter: { fileAbsolutePath: { regex: "/content/projects/" }, frontmatter: { featured: { eq: false } } }
+      filter: { fileAbsolutePath: { regex: "/content/projects/" } }
     ) {
       nodes {
         frontmatter {
@@ -44,8 +44,18 @@ export const pageQuery = graphql`
           repo_link
           demo_link
           techs
+          cover_image {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         html
+        fields {
+          slug
+        }
       }
     }
   }

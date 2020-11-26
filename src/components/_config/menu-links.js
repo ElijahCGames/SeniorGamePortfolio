@@ -10,8 +10,8 @@ export const indexMenuLinks = [
     icon: 'terminal',
   },
   {
-    name: 'Blog',
-    link: '/#blog',
+    name: 'Resume',
+    link: '/#resume',
     icon: 'feather-alt',
   },
   {

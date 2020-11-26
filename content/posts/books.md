@@ -1,6 +1,6 @@
 ---
 date: 2020-02-12
-title: '7 Scary Things Web Devs write In Their Journals'
+title: 'Test Test Test'
 tags: ['Webdevelopment', 'Writing', 'Stuff']
 published: true
 cover_image: ./images/book.jpg

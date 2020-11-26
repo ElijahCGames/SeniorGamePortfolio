@@ -23,6 +23,7 @@ const StyledFeatureGridContainer = styled.section`
     grid-template-columns: repeat(3, 1fr);
   }
 `;
+
 const StyledFeatureCard = styled.article`
   border: 1px solid var(--body-color);
   border-radius: var(--radius);
@@ -69,7 +70,6 @@ const CardGrid = ({ cards, description, title, id = null }) => {
   return (
     <StyledSection id={id}>
       {title && <StyledH1>{title}</StyledH1>}
-      <StyledTextSection dangerouslySetInnerHTML={{ __html: description }} />
       <StyledFeatureGridContainer>{featureCards}</StyledFeatureGridContainer>
     </StyledSection>
   );

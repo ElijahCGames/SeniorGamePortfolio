@@ -1,12 +1,12 @@
 module.exports = {
   pathPrefix: '/gatsby-starter-level-2',
   siteMetadata: {
-    title: 'ELijah Cobb',
-    titleTemplate: '%s · Elijah Cobb',
+    title: 'Elijah Cobb',
+    titleTemplate: '%s - Elijah Cobb',
     image: '/images/GreenRectangles/AboutGreen.png',
-    author: 'Max Mustermann',
-    description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
-    url: 'https://knochenmark.github.io',
+    author: 'Elijah Cobb',
+    description: '',
+    url: 'https://elijahcobbgames.com',
     paginationPageSize: 4, // Amount of posts displayed per listing page.
   },
   plugins: [

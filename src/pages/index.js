@@ -26,12 +26,12 @@ const Index = ({ data }) => {
     <Layout menuLinks={indexMenuLinks}>
       <SEO title="Home" />
       <Hero data={heroData} />
-      <Facts/>
-      <About data={data.about} />
-      <CardGrid cards={data.cards.frontmatter.cards} description={data.cards.html} title="Our Features" id="features" />
       <FeaturedProjects featured={data.featuredProjects.nodes} />
-      <RecentPosts data={data.blog.edges} />
+      <About data={data.about} />      
+      <Facts/>
       <Contact data={data.contact} />
+      <CardGrid cards={data.cards.frontmatter.cards} description={data.cards.html} title="Our Features" id="features" />
+      <RecentPosts data={data.blog.edges} />
     </Layout>
   );
 };
@@ -108,6 +108,9 @@ export const query = graphql`
           }
         }
         html
+        fields {
+          slug
+        }
       }
     }
 
@@ -141,9 +144,9 @@ export const query = graphql`
 
     contact: markdownRemark(fileAbsolutePath: { regex: "/content/sections/contact/" }) {
       frontmatter {
-        phone
+        twitter
         email
-        address
+        location
       }
       html
     }

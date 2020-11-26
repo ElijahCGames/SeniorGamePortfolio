@@ -2,6 +2,7 @@
 featured: false
 date: '2010-03-19'
 title: 'Vue'
+cover_image: './images/motherboard.jpg'
 repo_link: 'https://github.com/vuejs/vue'
 demo_link: 'https://vuejs.org/'
 techs: ['Vue', 'Javascript', 'Vuetify']

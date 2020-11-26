@@ -56,7 +56,7 @@ const StyledContacts = styled.div`
 
 const Contact = ({ data }) => {
   const {
-    frontmatter: { phone, email, address },
+    frontmatter: { location, email, twitter },
     html,
   } = data;
 
@@ -67,12 +67,12 @@ const Contact = ({ data }) => {
         <StyledTextSection dangerouslySetInnerHTML={{ __html: html }} />
         <StyledSeparator />
         <StyledContacts>
-          {address && (
+          {location && (
             <StyledContainer>
               <Icon icon="building" />
               <StyledFormContainer>
-                <StyledForm>Office Location</StyledForm>
-                <span>{address}</span>
+                <StyledForm>Location</StyledForm>
+                <span>{location}</span>
               </StyledFormContainer>
             </StyledContainer>
           )}
@@ -80,17 +80,17 @@ const Contact = ({ data }) => {
             <StyledContainer>
               <Icon icon="paper-plane" />
               <StyledFormContainer>
-                <StyledForm>My E-Mail</StyledForm>
+                <StyledForm>E-Mail</StyledForm>
                 <span>{email}</span>
               </StyledFormContainer>
             </StyledContainer>
           )}
-          {phone && (
+          {twitter && (
             <StyledContainer>
-              <Icon icon="mobile-alt" />
+              <Icon icon="twitter" />
               <StyledFormContainer>
-                <StyledForm>Phone Number</StyledForm>
-                <span>{phone}</span>
+                <StyledForm>Twitter</StyledForm>
+                <span>{twitter}</span>
               </StyledFormContainer>
             </StyledContainer>
           )}

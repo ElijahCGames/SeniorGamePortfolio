@@ -7,7 +7,7 @@ import TextLink from './links/text-link';
 import TechList from './tech-list';
 import { mq } from './_shared/media';
 import { StyledContentLink } from './_shared/styled-content-link';
-import { StyledH1, StyledH2 } from './_shared/styled-headings';
+import { StyledH1, StyledH2, StyledH3 } from './_shared/styled-headings';
 import { StyledImageContainer } from './_shared/styled-image-container';
 import { contentBox, flexCenter, flexEnd } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
@@ -76,6 +76,7 @@ const FeaturedProjects = ({ featured }) => {
     const coverImage = project.frontmatter.cover_image ? project.frontmatter.cover_image.childImageSharp.fluid : null;
 
     const title = project.frontmatter.title;
+    const link = `/projects` + project.fields.slug;
     const demoLink = project.frontmatter.demo_link;
     const repoLink = project.frontmatter.repo_link;
     const demoLinkLabel = `featured project ${title} demo`;
@@ -85,7 +86,7 @@ const FeaturedProjects = ({ featured }) => {
       <StyledFeaturedProject key={title + index}>
         <a
           aria-label={demoLink ? demoLinkLabel : repoLink ? repoLinkLabel : `featured project ${title}`}
-          href={demoLink ? demoLink : repoLink ? repoLink : '#'}
+          href={link ? link: demoLink ? demoLink : repoLink ? repoLink : '#'}
           target="_blank"
           rel="noopener"
         >
@@ -96,7 +97,7 @@ const FeaturedProjects = ({ featured }) => {
           )}
         </a>
         <StyledProjectInfoContainer>
-          <StyledContentLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
+          <StyledContentLink href={link ? link : demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
             <StyledH2>{title}</StyledH2>
           </StyledContentLink>
           <StyledDescription dangerouslySetInnerHTML={{ __html: project.html }} />
@@ -104,7 +105,7 @@ const FeaturedProjects = ({ featured }) => {
           <StyledLinkContainer>
             {repoLink && (
               <a href={repoLink} target="_blank" rel="noopener" title="Repository Link" aria-label={repoLinkLabel}>
-                <Icon icon="github" prefix="fab" />
+                <Icon icon="itch-io" prefix="fab" />
               </a>
             )}
             {demoLink && (
@@ -121,9 +122,10 @@ const FeaturedProjects = ({ featured }) => {
   return (
     <StyledSection id="projects">
       <StyledH1>Featured Projects</StyledH1>
+      <StyledH3><a href="/projects">View All Projects <Icon icon="arrow-right"/></a></StyledH3>
       {featuredProjects}
       <StyledArchiveContainer>
-        <TextLink label="View More Projects" link="/projects" />
+        <TextLink label="View All Projects" link="/projects" />
       </StyledArchiveContainer>
     </StyledSection>
   );

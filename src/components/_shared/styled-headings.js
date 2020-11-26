@@ -36,3 +36,19 @@ export const StyledH2 = styled.h2`
     height: 2px;
   }
 `;
+
+export const StyledH3 = styled.h3`
+  color: var(--title-color);
+  margin: 10px 0;
+  position: relative;
+
+  &:after {
+    background-color: var(--primary-color);
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 110%;
+    height: 2px;
+  }
+`;

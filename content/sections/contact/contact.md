@@ -1,9 +1,7 @@
 ---
-phone: '+49 1234 5678910'
-email: 'maxmustermann@gmail.com'
-address: 'Friesenstr. 123, Berlin, Germany'
+twitter: '@ElijahC0bb'
+email: 'ecobb81@gmail.com'
+location: 'Boston, MA'
 ---
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-sed diam nonumy [Link to issues](https://github.com/Knochenmark/gatsby-starter-level-2/issues) tempor invidunt ut labore
-et dolore magna aliquyam erat, sed diam voluptua.
+If you want to reach out to me. Send me an email or DM me on Twitter. 
