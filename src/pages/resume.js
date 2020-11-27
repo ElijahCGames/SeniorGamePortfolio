@@ -3,10 +3,11 @@ import React from 'react';
 import Layout from '../components/layout';
 import PropTypes from 'prop-types';
 import SEO from '../components/seo';
+import Img from 'gatsby-image';
 import { blogMenuLinks } from '../components/_config/menu-links';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
 
-const StyledResume = styled.div`
+const StyledResume = styled.section`
     & > h1{
       color: var(--primary-color);
     }

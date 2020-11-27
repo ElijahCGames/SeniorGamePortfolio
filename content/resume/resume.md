@@ -2,7 +2,8 @@
 featured: true
 date: '2019-12-15'
 title: 'Pomodoro'
-cover_image: './images/ocean.jpg'
+cover_image: 'resume.png'
+pdfs: 'resume.pdf'
 v_link: 'sqj8d3nsc2E'
 demo_link: 'https://knochenmark.github.io/pomodoro/'
 ios_link: 'https://ios.com'
