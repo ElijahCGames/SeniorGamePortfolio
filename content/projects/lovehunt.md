@@ -6,7 +6,7 @@ cover_image: './images/lovehunt.png'
 demo_link: 'https://elijahcobb.itch.io/love-hunt'
 techs: ['Programmer', 'Writer']
 tags: ['RenPy']
-description: 'Hello how are you'
+description: "You've woken up in a monster world. What do you do? Perhaps it's a bit cliche but you want to know these monsters better."
 ---
 
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
+
