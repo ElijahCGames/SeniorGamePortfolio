@@ -25,6 +25,10 @@ const StyledContainer = styled.div`
 `;
 const StyledHomeLink = styled(Link)`
   text-decoration: none;
+
+  &:hover{
+    fill: var(--primary-color)
+  }
 `;
 const StyledLogo = styled(Logo)`
   width: var(--header-height);
@@ -80,7 +84,7 @@ const Header = ({ menuLinks }) => (
   <StyledHeader>
     <StyledContainer>
       <StyledHomeLink title="logo" to="/">
-        <StyledLogo />
+        <StyledLogo/>
       </StyledHomeLink>
       <StyledNav>
         {menuLinks.map((link, index) => (

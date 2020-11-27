@@ -8,7 +8,7 @@ cards:
   - label: PDF
     icon: file-pdf
     prefix: fas
-    link: resumepdf
+    link: resume-pdf
     description: All theme colors and further properties are adjustable via Css Variables.
 id: resume
 ---
