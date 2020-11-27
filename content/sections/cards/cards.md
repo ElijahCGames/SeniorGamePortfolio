@@ -8,7 +8,7 @@ cards:
   - label: PDF
     icon: file-pdf
     prefix: fas
-    link: http://jamie.camera/PDF/GamesResumeFInal.pdf
+    link: https://github.com/ElijahCGames/SeniorGamePortfolio/blob/master/content/resume/resume.pdf
     description: All theme colors and further properties are adjustable via Css Variables.
 id: resume
 ---
