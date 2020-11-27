@@ -5,6 +5,7 @@ import React from 'react';
 import Icon from './icon';
 import TextLink from './links/text-link';
 import TechList from './tech-list';
+import StyledSkewedSection from './skewed-section';
 import { mq } from './_shared/media';
 import { StyledContentLink } from './_shared/styled-content-link';
 import { StyledH1, StyledH2, StyledH3 } from './_shared/styled-headings';
@@ -79,15 +80,17 @@ const FeaturedProjects = ({ featured }) => {
     const link = `/projects` + project.fields.slug;
     const demoLink = project.frontmatter.demo_link;
     const repoLink = project.frontmatter.repo_link;
+    const iosLink = project.frontmatter.ios_link;
+    const androidLink = project.frontmatter.android_link;
     const demoLinkLabel = `featured project ${title} demo`;
     const repoLinkLabel = `featured project ${title} repo`;
+    const description = project.frontmatter.description;
 
     return (
       <StyledFeaturedProject key={title + index}>
         <a
           aria-label={demoLink ? demoLinkLabel : repoLink ? repoLinkLabel : `featured project ${title}`}
           href={link ? link: demoLink ? demoLink : repoLink ? repoLink : '#'}
-          target="_blank"
           rel="noopener"
         >
           {coverImage && (
@@ -97,20 +100,30 @@ const FeaturedProjects = ({ featured }) => {
           )}
         </a>
         <StyledProjectInfoContainer>
-          <StyledContentLink href={link ? link : demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
+          <StyledContentLink href={link ? link : demoLink ? demoLink : repoLink ? repoLink : '#'} rel="noopener">
             <StyledH2>{title}</StyledH2>
           </StyledContentLink>
-          <StyledDescription dangerouslySetInnerHTML={{ __html: project.html }} />
+          <StyledDescription><p>{description}</p></StyledDescription>
           <TechList techs={project.frontmatter.techs} />
           <StyledLinkContainer>
             {repoLink && (
               <a href={repoLink} target="_blank" rel="noopener" title="Repository Link" aria-label={repoLinkLabel}>
-                <Icon icon="itch-io" prefix="fab" />
+                <Icon icon="github" prefix="fab" />
               </a>
             )}
             {demoLink && (
-              <a href={demoLink} target="_blank" rel="noopener" title="Demo Link" aria-label={demoLinkLabel}>
-                <Icon icon="external-link-alt" />
+              <a href={demoLink} target="_blank" rel="noopener" title="Itch Link" aria-label={demoLinkLabel}>
+                <Icon icon="itch-io" prefix="fab"/>
+              </a>
+            )}
+            {iosLink && (
+              <a href={iosLink} target="_blank" rel="noopener" title="Itch Link" aria-label={demoLinkLabel}>
+                <Icon icon="apple" prefix="fab"/>
+              </a>
+            )}
+            {androidLink && (
+              <a href={androidLink} target="_blank" rel="noopener" title="Itch Link" aria-label={demoLinkLabel}>
+                <Icon icon="android" prefix="fab"/>
               </a>
             )}
           </StyledLinkContainer>
@@ -120,14 +133,14 @@ const FeaturedProjects = ({ featured }) => {
   });
 
   return (
-    <StyledSection id="projects">
-      <StyledH1>Featured Projects</StyledH1>
+    <StyledSkewedSection angle = {30}>
+      <StyledH1 id = "projects">Featured Projects</StyledH1>
       <StyledH3><a href="/projects">View All Projects <Icon icon="arrow-right"/></a></StyledH3>
       {featuredProjects}
       <StyledArchiveContainer>
         <TextLink label="View All Projects" link="/projects" />
       </StyledArchiveContainer>
-    </StyledSection>
+    </StyledSkewedSection>
   );
 };
 

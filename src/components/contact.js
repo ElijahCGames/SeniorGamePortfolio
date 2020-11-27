@@ -62,6 +62,7 @@ const Contact = ({ data }) => {
 
   return (
     <React.Fragment>
+      
       <StyledContactSection id="contact">
         <StyledH1>Contact Details</StyledH1>
         <StyledTextSection dangerouslySetInnerHTML={{ __html: html }} />

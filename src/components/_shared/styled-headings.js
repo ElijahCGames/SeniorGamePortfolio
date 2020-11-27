@@ -5,6 +5,7 @@ export const StyledH1 = styled.h1`
   position: relative;
   font-weight: 800;
   margin: 20px 0;
+  color; var(--title-color);
 
   &:first-letter {
     color: var(--primary-color);

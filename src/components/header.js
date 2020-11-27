@@ -85,7 +85,6 @@ const Header = ({ menuLinks }) => (
       <StyledNav>
         {menuLinks.map((link, index) => (
           <StyledNavLink key={link.name} to={link.link} activeClassName="active">
-            <StyledIndexNumber>{`${String(index + 1).padStart(2, '0')}.`}</StyledIndexNumber>
             {link.name}
           </StyledNavLink>
         ))}

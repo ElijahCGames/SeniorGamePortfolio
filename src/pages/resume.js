@@ -1,41 +1,49 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import Layout from '../components/layout';
-import ProjectList from '../components/project-list';
+import PropTypes from 'prop-types';
 import SEO from '../components/seo';
 import { blogMenuLinks } from '../components/_config/menu-links';
-import { StyledH1 } from '../components/_shared/styled-headings';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
-import { StyledSeparator } from '../components/_shared/styled-separator';
 
-const StyledProjectsH1 = styled(StyledH1)`
-  margin-top: 3rem;
+const StyledResume = styled.div`
+    & > h1{
+      color: var(--primary-color);
+    }
+
+    & > h2{
+        color: var(--primary-color);
+      }
 `;
-const Projects = ({
-  data: {
-    allMarkdownRemark: { nodes },
-  },
-}) => {
-  console.log(nodes);
-  return (
-    <Layout menuLinks={blogMenuLinks}>
-      <SEO title="Projects" />
-      <StyledFullHeightSection>
-        <StyledProjectsH1>Projects</StyledProjectsH1>
-        <StyledSeparator />
-        <ProjectList projects={nodes} />
-      </StyledFullHeightSection>
-    </Layout>
-  );
+
+const Resume = ({
+    data: {
+      allMarkdownRemark: { nodes },
+    },
+  }) => {
+    console.log({nodes});
+    return (
+        <Layout menuLinks={blogMenuLinks}>
+        <SEO title="Resume" />
+        <StyledFullHeightSection>
+            <StyledResume dangerouslySetInnerHTML={{ __html: nodes[0].html }}/>
+        </StyledFullHeightSection>
+        </Layout>
+    );
 };
 
-export default Projects;
+Resume.propTypes = {
+    data: PropTypes.object.isRequired,
+  };
+
+export default Resume;
 
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { order: DESC, fields: frontmatter___date }
-      filter: { fileAbsolutePath: { regex: "/content/projects/" } }
+      limit: 1
+      filter: { fileAbsolutePath: { regex: "/content/resume/" } }
     ) {
       nodes {
         frontmatter {

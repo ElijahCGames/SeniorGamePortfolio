@@ -6,8 +6,8 @@ import { flexCenter } from './../_shared/styled-mixins';
 export const StyledButtonLink = styled.a`
   ${flexCenter};
   text-decoration: none;
-  color: var(--bg-content-color) !important;
-  background-color: var(--title-color);
+  color: var(--primary-color) !important;
+  background-color: var(--bg-content-color);
   font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap;
@@ -16,13 +16,13 @@ export const StyledButtonLink = styled.a`
   padding: 0.4rem 0.8rem;
 
   &:hover {
-    color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
   }
 
   &:after {
     content: '';
     z-index: -1;
-    border: 1px solid var(--title-color);
+    border: 1px solid var(--primary-color);
     position: absolute;
     bottom: -3px;
     right: -3px;
@@ -32,7 +32,7 @@ export const StyledButtonLink = styled.a`
   }
 
   &:hover:after {
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--secondary-color);
     bottom: -5px;
     right: -5px;
   }

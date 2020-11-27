@@ -8,7 +8,6 @@ import FeaturedProjects from '../components/featured-projects';
 import Hero from '../components/hero';
 import Facts from '../components/facts';
 import Layout from '../components/layout';
-import RecentPosts from '../components/recent-posts';
 import SEO from '../components/seo';
 import { indexMenuLinks } from '../components/_config/menu-links';
 
@@ -29,9 +28,9 @@ const Index = ({ data }) => {
       <FeaturedProjects featured={data.featuredProjects.nodes} />
       <About data={data.about} />      
       <Facts/>
+      <CardGrid cards={data.cards.frontmatter.cards} description={data.cards.html} title="Resume" id="features" />
       <Contact data={data.contact} />
-      <CardGrid cards={data.cards.frontmatter.cards} description={data.cards.html} title="Our Features" id="features" />
-      <RecentPosts data={data.blog.edges} />
+
     </Layout>
   );
 };
@@ -82,6 +81,7 @@ export const query = graphql`
           icon
           prefix
           description
+          link
         }
       }
       html
@@ -98,7 +98,11 @@ export const query = graphql`
           title
           repo_link
           demo_link
+          ios_link
+          android_link
           techs
+          description
+          tags
           cover_image {
             childImageSharp {
               fluid(maxWidth: 800) {

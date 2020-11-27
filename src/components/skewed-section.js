@@ -26,7 +26,7 @@ const StyledSkewedSection = styled.section`
     right: 0;
     bottom: 0;
     z-index: -1;
-    transform: skewy(-11deg);
+    transform: skewy(-5deg);
     transform-origin: 50% 0;
     outline: 1px solid transparent;
     backface-visibility: hidden;

@@ -1,36 +1,41 @@
 export const indexMenuLinks = [
   {
+    name: 'Projects',
+    link: '/#projects',
+    icon: 'gamepad',
+  },
+  {
     name: 'About',
     link: '/#about',
     icon: 'user-tie',
   },
   {
-    name: 'Projects',
-    link: '/#projects',
-    icon: 'terminal',
-  },
-  {
-    name: 'Resume',
+    name: 'Résumé',
     link: '/#resume',
-    icon: 'feather-alt',
+    icon: 'file-alt',
   },
   {
     name: 'Contact',
     link: '/#contact',
-    icon: 'envelope',
+    icon: 'id-card',
   },
 ];
 
 export const blogMenuLinks = [
   {
-    name: 'Portfolio',
+    name: 'Home',
     link: '/',
-    icon: 'code',
+    icon: 'home',
   },
   {
-    name: 'Blog',
-    link: '/blog',
-    icon: 'feather-alt',
+    name: 'Projects',
+    link: '/projects',
+    icon: 'gamepad',
+  },
+  {
+    name: 'Résumé',
+    link: '/resume',
+    icon: 'file-alt',
   },
   {
     name: 'Tags',

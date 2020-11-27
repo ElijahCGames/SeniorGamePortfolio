@@ -24,26 +24,54 @@ const StyledFeatureGridContainer = styled.section`
   }
 `;
 
-const StyledFeatureCard = styled.article`
-  border: 1px solid var(--body-color);
+const StyledFeatureCard = styled.a`
+  border: 3px solid var(--primary-color);
   border-radius: var(--radius);
 
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 200px;
+  min-height: 100px;
   padding: 1rem;
+  background-color: var(--bg-content-color);
+  color: var(--primary-color) !important;
+  position: relative;
+  border: none;
 
   & svg {
     height: 2rem;
     width: 2rem;
     font-size: 2rem;
+    transition: all ease var(--transition-slow)
+  }
+
+  &:hover > *{
+    color: var(--secondary-color) !important;
+  }
+
+  &:after {
+    content: '';
+    z-index: -1;
+    border: 3px solid var(--primary-color);
+    position: absolute;
+    bottom: -9px;
+    right: -9px;
+    width: 100%;
+    height: 100%;
+    transition: all ease var(--transition-slow);
+  }
+
+  &:hover:after {
+    border: 3px solid var(--secondary-color);
+    bottom: -15px;
+    right: -15px;
   }
 `;
 const StyledCardLabel = styled.h2`
   font-size: 1.5rem;
   margin: 1rem 0;
-  color: var(--body-color);
+  color: var(--primary-color);
+ }
 `;
 const StyledDivider = styled.div`
   width: 15%;
@@ -52,24 +80,23 @@ const StyledDivider = styled.div`
   margin-bottom: 1rem;
 `;
 const StyledFeatureDescription = styled.p`
-  font-size: 0.8rem;
+  font-size: 1rem;
 `;
 
 const CardGrid = ({ cards, description, title, id = null }) => {
-  const featureCards = cards.map(({ icon, prefix, label, description }, index) => {
+  const featureCards = cards.map(({ icon, prefix, label, link }, index) => {
     return (
-      <StyledFeatureCard key={index}>
-        <Icon icon={icon} prefix={prefix} />
+      <StyledFeatureCard key={index} href={link}>
+        <Icon icon={icon} prefix={prefix}/>
         <StyledCardLabel>{label}</StyledCardLabel>
-        <StyledDivider></StyledDivider>
-        <StyledFeatureDescription>{description}</StyledFeatureDescription>
       </StyledFeatureCard>
     );
   });
 
   return (
-    <StyledSection id={id}>
+    <StyledSection id='resume'>
       {title && <StyledH1>{title}</StyledH1>}
+      <StyledFeatureDescription dangerouslySetInnerHTML={{ __html: description }} />
       <StyledFeatureGridContainer>{featureCards}</StyledFeatureGridContainer>
     </StyledSection>
   );

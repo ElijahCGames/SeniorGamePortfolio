@@ -47,16 +47,16 @@ const Facts = () => {
     <StyledSkewedSection angle={10}>
       <StyledLogoSection>
         <StyledFactNumber>
-          <span className="number">127</span>
-          <span className="fact">Finished Projects</span>
+          <span className="number">39,000</span>
+          <span className="fact">Itch.io Views</span>
         </StyledFactNumber>
         <StyledFactNumber>
-          <span className="number">321</span>
-          <span className="fact">Happy Customers</span>
+          <span className="number">VOX and FORBES</span>
+          <span className="fact">Features</span>
         </StyledFactNumber>
         <StyledFactNumber>
-          <span className="number">863</span>
-          <span className="fact">Freelancing Hours</span>
+          <span className="number">11</span>
+          <span className="fact">Published Games</span>
         </StyledFactNumber>
       </StyledLogoSection>
     </StyledSkewedSection>

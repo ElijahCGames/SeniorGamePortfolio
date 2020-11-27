@@ -37,7 +37,7 @@ const StyledLinkContainer = styled.section`
 
   & > a {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     color: var(--body-color);
 
@@ -72,24 +72,25 @@ const ProjectList = ({ projects }) => {
     const demoLink = project.frontmatter.demo_link;
     const repoLink = project.frontmatter.repo_link;
     const coverImage = project.frontmatter.cover_image ? project.frontmatter.cover_image.childImageSharp.fluid : null;
+    const description = project.frontmatter.description;
     const demoLinkLabel = `featured project ${title} demo`;
     const repoLinkLabel = `featured project ${title} repo`;
 
     return (
       <StyledProject key={title}>
         <StyledHeader>
-          <StyledContentLink href={link ? link : demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
+          <StyledContentLink href={link ? link : demoLink ? demoLink : repoLink ? repoLink : '#'} rel="noopener">
             <StyledH2>{title}</StyledH2>
           </StyledContentLink>
           <StyledLinkContainer>
-            {repoLink && (
-              <a href={repoLink} target="_blank" rel="noopener" title="Repository Link" aria-label={repoLinkLabel}>
-                <Icon icon="itch-io" prefix="fab" />
-              </a>
-            )}
             {demoLink && (
               <a href={demoLink} target="_blank" rel="noopener" title="Demo Link" aria-label={demoLinkLabel}>
-                <Icon icon="external-link-alt" />
+                <Icon icon="itch-io" prefix="fab" />
+              </a>
+            )}          
+            {repoLink && (
+              <a href={repoLink} target="_blank" rel="noopener" title="Repo Link" aria-label={repoLinkLabel}>
+                <Icon icon="github" prefix="fab" />
               </a>
             )}
           </StyledLinkContainer>
@@ -97,7 +98,6 @@ const ProjectList = ({ projects }) => {
         <a
           aria-label={demoLink ? demoLinkLabel : repoLink ? repoLinkLabel : `featured project ${title}`}
           href={link ? link : demoLink ? demoLink : repoLink ? repoLink : '#'}
-          target="_blank"
           rel="noopener"
         >
           {coverImage && (
@@ -107,7 +107,7 @@ const ProjectList = ({ projects }) => {
           )}
         </a>
         <StyledInfoContainer>
-          <StyledProjectText dangerouslySetInnerHTML={{ __html: project.html }} />
+          <StyledProjectText><p>{description}</p></StyledProjectText>
           <TechList techs={project.frontmatter.techs} />
         </StyledInfoContainer>
       </StyledProject>
